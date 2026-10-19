@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng 20/10 - Tập Thể Nam 12A5</title>
+    <!-- Font chữ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Liên kết tới file style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Nhạc nền từ file m4a của bạn -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="nhac_nen.m4a" type="audio/mp4">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+
+    <!-- Nút Bật/Tắt nhạc nổi ở góc màn hình -->
+    <div class="music-floating-container">
+        <button id="musicToggleBtn" class="music-toggle-btn" title="Bật/Tắt nhạc nền">
+            <span id="musicIcon">🔇</span>
+            <span id="musicText">Bật nhạc nền</span>
+        </button>
+    </div>
+    <!-- Hiệu ứng cánh hoa và trái tim rơi -->
+    <div class="petals-container" id="petals"></div>
+
+    <!-- MÀN HÌNH 1: TRANG CHỦ (LÁ THƯ + DANH SÁCH 8 BẠN NỮ) -->
+    <main class="container" id="homeView">
+        <!-- Phần tiêu đề -->
+        <header class="hero-header">
+            <span class="badge">✨ MÓN QUÀ ĐẶC BIỆT TỪ CÁC BẠN NAM 12A5 ✨</span>
+            <h1>Happy Vietnamese Women's Day 20/10</h1>
+            <p class="subtitle">Dành tặng 8 bông hoa rực rỡ và đáng yêu nhất của đại gia đình 12A5</p>
+        </header>
+
+        <!-- Lá thư mở đầu đại diện các bạn nam 12A5 -->
+        <section class="letter-section">
+            <div class="envelope-badge">💌</div>
+            <h2 class="letter-title">Thư Gửi Các Bạn Nữ Lớp 12A5 Thân Yêu</h2>
+            <div class="letter-content">
+                <p>Chào những bạn nữ, những bông hoa xinh đẹp nhất của tập thể <strong>12A5</strong>!</p>
+                <p>Nhân dịp <strong>Ngày Phụ nữ Việt Nam 20/10</strong> và hành trình thanh xuân năm học cuối cấp hướng tới mùa tri ân <strong>20/11</strong>, đại diện cho toàn thể các bạn nam trong lớp, tụi mình muốn gửi đến 8 cô gái tuyệt vời: <strong>Tường Vy, Nguyên, Hương Giang, Ánh Ngọc, Minh Loan, Linh Sang, Thu Phương</strong> và <strong>Khánh Chi</strong> những lời chúc tốt đẹp và chân thành nhất!</p>
+                <p>Cảm ơn các bạn vì đã luôn là mảnh ghép không thể thiếu, mang lại tiếng cười, sự dịu dàng và nguồn năng lượng tích cực cho lớp mình mỗi ngày tới trường. Dù đôi lúc tụi con trai 12A5 có hơi tinh nghịch, vụng về hay trêu chọc làm các bạn giận, nhưng trong lòng tụi mình, các bạn luôn là những cô gái đặc biệt nhất.</p>
+                <p>Chúc các bạn luôn giữ mãi nụ cười tỏa nắng trên môi, ngày càng xinh đẹp, tự tin, hạnh phúc và đạt điểm số thật cao, đỗ vào nguyện vọng mơ ước trong kỳ thi quan trọng sắp tới. Hãy bấm vào tên của mình ở bên dưới để mở trang quà tặng video bí mật mà tụi mình đã chuẩn bị riêng cho từng bạn nhé!</p>
+            </div>
+            <div class="letter-signature">
+                Thương gửi,<br>
+                <span>Tập thể Nam sinh 12A5 ❤️</span>
+            </div>
+        </section>
+
+        <!-- Danh sách 8 nút bấm tên các bạn nữ -->
+        <section class="girls-section">
+            <h3 class="section-heading">🎁 Chọn Tên Của Bạn Để Vào Trang Video Chúc Mừng 🎁</h3>
+            <p class="section-sub">Nhấn vào đúng tên của bạn để mở món quà bí mật dành riêng cho bạn nhé!</p>
+
+            <div class="girls-grid" id="girlsGrid">
+                <!-- Các thẻ tên được tạo tự động từ script.js -->
+            </div>
+        </section>
+    </main>
+
+    <!-- MÀN HÌNH 2: TRANG XEM VIDEO RIÊNG CHO TỪNG BẠN NỮ -->
+    <section class="video-page-view hidden" id="videoPageView">
+        <div class="container">
+            <div class="video-page-card">
+                <div class="video-page-top">
+                    <button class="back-btn" id="backHomeBtn">
+                        ← Quay lại trang lá thư 12A5
+                    </button>
+                    <span class="personal-tag" id="personalTag">Quà tặng riêng 20/10</span>
+                </div>
+
+                <div class="recipient-header">
+                    <div class="recipient-avatar" id="recipientIcon">🌸</div>
+                    <h2 class="recipient-title" id="recipientName">Gửi tặng...</h2>
+                    <p class="recipient-wish" id="recipientWish">Lời chúc dành riêng cho bạn...</p>
+                </div>
+
+                <!-- Khung phát video -->
+                <div class="video-frame-wrapper" id="videoContainer">
+                    <!-- Iframe hoặc thẻ Video sẽ được chèn tự động từ script.js -->
+                </div>
+
+                <div class="video-actions">
+                    <a href="#" target="_blank" id="directVideoLink" class="action-btn primary-btn">
+                        🔗 Mở link video trực tiếp ở tab mới
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>Made with ❤️ by Boys 12A5 • Kỷ niệm thanh xuân 2026</p>
+    </footer>
+
+    <!-- Liên kết tới file script.js -->
+    <script src="script.js"></script>
+</body>
+</html>
